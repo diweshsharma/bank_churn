@@ -1,0 +1,26 @@
+# Virtual environment
+menv/
+venv/
+env/
+
+# Dataset
+dataset/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+# .ipynb_checkpoints/
+
+# MLflow
+mlruns/
+
+# Model files (optional — add if too large)
+*.pth
+*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
