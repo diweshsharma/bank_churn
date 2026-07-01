@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import StandardScaler, OneHotEncoder , LabelEncoder
+from sklearn.preprocessing import StandardScaler, OneHotEncoder , OrdinalEncoder
 from sklearn.compose import ColumnTransformer
 
 numerical = ['CreditScore' , 'Age' ,'Tenure' ,'Balance' , 'NumOfProducts' ,'EstimatedSalary' , 'Satisfaction Score' ,'Point Earned'
@@ -19,8 +19,8 @@ def preprocess():
             OneHotEncoder(handle_unknown = 'ignore'),
             onehotcat ) ,
                         
-            ('encoder2', LabelEncoder(), labelcat),
+            ('encoder2', OrdinalEncoder(), labelcat),
             
             ('scaler' , StandardScaler(), numerical)
-        ]
+        ] ,remainder = 'passthrough'
     )
