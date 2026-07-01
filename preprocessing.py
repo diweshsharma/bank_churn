@@ -8,9 +8,7 @@ numerical = ['CreditScore' , 'Age' ,'Tenure' ,'Balance' , 'NumOfProducts' ,'Esti
 
 labelcat = ['Gender']
 
-onehotcat =['Geography' , 'Card Type'
-    
-]
+onehotcat =['Geography' , 'Card Type']
 
 def preprocess():
     return ColumnTransformer(
@@ -22,5 +20,5 @@ def preprocess():
             ('encoder2', OrdinalEncoder(), labelcat),
             
             ('scaler' , StandardScaler(), numerical)
-        ] ,remainder = 'passthrough'
+        ] , remainder = 'passthrough'
     )
